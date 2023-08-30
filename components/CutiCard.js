@@ -1,8 +1,16 @@
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Colors } from '../constants/colors';
 
-function CutiCard({ icon, title, text }) {
+function CutiCard({ icon, title, text, screenName, onPress }) {
+  const navigation = useNavigation();
+
+  // function pressHandler() {
+  //   // TODO: redirect to screen
+
+  // }
+
   return (
     <Pressable
       android_ripple={{ color: '#ccc' }}
@@ -10,6 +18,7 @@ function CutiCard({ icon, title, text }) {
         styles.button,
         pressed ? styles.buttonPressed : null,
       ]}
+      onPress={onPress.bind(screenName)}
     >
       <View style={styles.card}>
         <MaterialIcons
