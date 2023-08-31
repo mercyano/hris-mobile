@@ -1,6 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { View } from 'react-native';
 import { Colors } from '../../constants/colors';
+import Button from '../Button';
 import Input from '../Inputs/Input';
 
 function CutiTahunanForm() {
@@ -9,6 +11,8 @@ function CutiTahunanForm() {
     keterangan: '',
   });
 
+  const navigation = useNavigation();
+
   function inputChangedHandler(inputIdentifier, enteredValue) {
     setInputValues((curInputValues) => {
       return {
@@ -16,6 +20,10 @@ function CutiTahunanForm() {
         [inputIdentifier]: enteredValue,
       };
     });
+  }
+
+  function cancelHandler() {
+    navigation.goBack();
   }
 
   return (
@@ -40,6 +48,10 @@ function CutiTahunanForm() {
           value: inputValues.keterangan,
         }}
       />
+      <Button>Request</Button>
+      <Button onPress={cancelHandler} mode="cancel">
+        Cancel
+      </Button>
     </View>
   );
 }
