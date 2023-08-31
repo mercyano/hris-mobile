@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 12,
     backgroundColor: Colors.success,
     justifyContent: 'space-between',
   },

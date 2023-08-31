@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginVertical: 10,
     backgroundColor: Colors.white,
-    borderRadius: 10,
+    borderRadius: 12,
   },
   label: {
     color: Colors.grey500,
@@ -26,5 +26,4 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: 4,
   },
-  input: {},
 });
