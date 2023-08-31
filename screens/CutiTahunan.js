@@ -1,12 +1,13 @@
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import CutiTahunanForm from '../components/Forms/CutiTahunanForm';
 import Jumbotron from '../components/Jumbotron';
+
 function CutiTahunan() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Jumbotron />
       <CutiTahunanForm />
-    </View>
+    </ScrollView>
   );
 }
 export default CutiTahunan;
