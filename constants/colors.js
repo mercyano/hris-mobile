@@ -29,4 +29,5 @@ export const Colors = {
   grey300: '#D8D8E5',
   grey200: '#F1F1F2',
   grey100: '#F9F9F9',
+  cancel: '#FFE2E6',
 };
