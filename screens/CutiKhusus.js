@@ -4,7 +4,7 @@ import Jumbotron from '../components/Jumbotron';
 function CutiKhusus() {
   return (
     <View style={styles.container}>
-      <Jumbotron></Jumbotron>
+      <Jumbotron />
     </View>
   );
 }
