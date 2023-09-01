@@ -2,11 +2,17 @@ import { ScrollView, StyleSheet } from 'react-native';
 import CutiTahunanForm from '../components/Forms/CutiTahunanForm';
 import Jumbotron from '../components/Jumbotron';
 
-function CutiTahunan() {
+function CutiTahunan({ navigation }) {
+  function requestCutiHandler(cutiTahunanData) {
+    navigation.navigate('HistoryRequest', {
+      cutiTahunanData: cutiTahunanData,
+    });
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Jumbotron />
-      <CutiTahunanForm />
+      <CutiTahunanForm requestCutiHandler={requestCutiHandler} />
     </ScrollView>
   );
 }

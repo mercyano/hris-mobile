@@ -3,11 +3,12 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { View } from 'react-native';
 import { Colors } from '../../constants/colors';
+import { CutiTahunanData } from '../../models/cutiTahunanData';
 import Button from '../Button';
 import DatePicker from '../Inputs/DatePicker';
 import Input from '../Inputs/Input';
 
-function CutiTahunanForm() {
+function CutiTahunanForm({ requestCutiHandler }) {
   const [inputValues, setInputValues] = useState({
     namaAtasan: '',
     kontak: '',
@@ -68,6 +69,8 @@ function CutiTahunanForm() {
 
   function requestHandler() {
     console.log(inputValues);
+    const cutiTahunanData = new CutiTahunanData(inputValues);
+    requestCutiHandler(cutiTahunanData);
   }
 
   return (
@@ -113,7 +116,7 @@ function CutiTahunanForm() {
       />
 
       <Input
-        label="Atasan"
+        label="Pilih Approval Atasan"
         textInputConfig={{
           placeholder: 'Tulis nama atasan',
           placeholderTextColor: Colors.grey300,
