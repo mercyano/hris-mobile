@@ -1,11 +1,19 @@
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import CutiKhususForm from '../components/Forms/CutiKhususForm';
 import Jumbotron from '../components/Jumbotron';
 
-function CutiKhusus() {
+function CutiKhusus({ navigation }) {
+  function requestCutiHandler(cutiTahunanData) {
+    navigation.navigate('HistoryRequest', {
+      cutiTahunanData: cutiTahunanData,
+    });
+  }
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Jumbotron />
-    </View>
+      <CutiKhususForm requestCutiHandler={requestCutiHandler} />
+    </ScrollView>
   );
 }
 export default CutiKhusus;
